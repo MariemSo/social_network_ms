@@ -80,8 +80,12 @@ const authSlice = createSlice({
         state.authState.error = null;
       }
     },
+    logOut: (state) => {
+      state.authState.auth.isLoggedIn = false;
+      state.authState.auth.currentUserId = null;
+    },
   },
 });
 
-export const { register, logIn } = authSlice.actions;
+export const { register, logIn, logOut } = authSlice.actions;
 export default authSlice.reducer;

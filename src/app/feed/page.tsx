@@ -1,10 +1,10 @@
-import Navbar from "@/components/Navbar";
+import UserCard from "@/components/UserCard";
 import React from "react";
 
 const Feed = () => {
   return (
     <div>
-      <Navbar />
+      <UserCard />
     </div>
   );
 };

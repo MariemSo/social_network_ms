@@ -3,7 +3,7 @@ interface IUser {
   name: string;
   profilePicture?: string;
   statusMessage?: string;
-  friends?: number[];
+  friends: number[];
 }
 
 interface IAuth {

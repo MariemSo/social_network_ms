@@ -1,12 +1,8 @@
-import Navbar from "@/components/Navbar";
+"use client";
 import React from "react";
 
 const Profile = () => {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Profile;

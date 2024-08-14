@@ -1,5 +1,4 @@
 "use client";
-import Navbar from "@/components/Navbar";
 import { useEffect } from "react";
 import { useAppSelector } from "@/redux/store";
 import { useRouter } from "next/navigation";
@@ -9,6 +8,7 @@ export default function Home() {
   const isAuth = useAppSelector(
     (state) => state.authSlice.authState.auth.isLoggedIn
   );
+  console.log(isAuth);
 
   useEffect(() => {
     if (!isAuth) {
@@ -16,9 +16,5 @@ export default function Home() {
     }
   }, [isAuth]);
 
-  return (
-    <main>
-      <Navbar />
-    </main>
-  );
+  return <main></main>;
 }
