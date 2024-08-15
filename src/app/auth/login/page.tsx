@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "../../../../public/images/meeting.png";
-import { logIn } from "@/redux/reducers/authSlice";
+import { logIn } from "@/redux/reducers/userAuthSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch, useAppSelector } from "@/redux/store";
 import { useRouter } from "next/navigation";
@@ -11,11 +11,12 @@ const LogIn = () => {
   const [name, setName] = useState("");
   const dispatch = useDispatch<AppDispatch>();
   const isAuth = useAppSelector(
-    (state) => state.authSlice.authState.auth.isLoggedIn
+    (state) => state.userAuth.authState.auth.isLoggedIn
   );
 
   const router = useRouter();
-  const error = useAppSelector((state) => state.authSlice.authState.error);
+  const error = useAppSelector((state) => state.userAuth.authState.error);
+
   useEffect(() => {
     if (isAuth) {
       router.push("/");
@@ -26,6 +27,7 @@ const LogIn = () => {
     e.preventDefault();
     dispatch(logIn({ name }));
   };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
@@ -65,7 +67,7 @@ const LogIn = () => {
                   Sign in
                 </button>
                 <p className="mt-10 text-center text-sm text-gray-500">
-                  Not One of Us yet ?&nbsp;
+                  Not One of Us yet?&nbsp;
                   <a
                     href="/auth/register"
                     className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"

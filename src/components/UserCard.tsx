@@ -1,20 +1,27 @@
 import React from "react";
 
-const UserCard = () => {
+interface UserCardProps {
+  name: string;
+  profilePicture?: string;
+  statusMessage?: string;
+}
+
+const UserCard: React.FC<UserCardProps> = ({
+  name,
+  profilePicture = "https://via.placeholder.com/150",
+  statusMessage = "No status message",
+}) => {
   return (
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+    <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-full">
       <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-80">
-        <img
-          src="https://docs.material-tailwind.com/img/team-3.jpg"
-          alt="profile-picture"
-        />
+        <img src={profilePicture} alt={`${name}'s profile picture`} />
       </div>
       <div className="p-6 text-center">
         <h4 className="block mb-2 font-sans text-2xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-          Natalie Paisley
+          {name}
         </h4>
         <p className="block font-sans text-base antialiased font-medium leading-relaxed bg-clip-text bg-gradient-to-tr from-blue-gray-600 to-blue-gray-400">
-          CEO / Co-Founder
+          {statusMessage}
         </p>
       </div>
       <div className="flex justify-center p-6 pt-2 gap-7">

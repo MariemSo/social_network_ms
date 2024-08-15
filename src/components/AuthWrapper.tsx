@@ -4,7 +4,7 @@ import { useAppSelector } from "@/redux/store";
 
 const AuthWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const isAuth = useAppSelector(
-    (state) => state.authSlice.authState.auth.isLoggedIn
+    (state) => state.userAuth.authState.auth.isLoggedIn
   );
 
   return (

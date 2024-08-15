@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import logo from "../../../../public/images/meeting.png";
 import { useDispatch } from "react-redux";
 import { AppDispatch, useAppSelector } from "@/redux/store";
-import { register } from "@/redux/reducers/authSlice";
+import { register } from "@/redux/reducers/userAuthSlice";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -14,16 +14,17 @@ const Register = () => {
 
   const dispatch = useDispatch<AppDispatch>();
   const isAuth = useAppSelector(
-    (state) => state.authSlice.authState.auth.isLoggedIn
+    (state) => state.userAuth.authState.auth.isLoggedIn
   );
   const router = useRouter();
-  const error = useAppSelector((state) => state.authSlice.authState.error);
+  const error = useAppSelector((state) => state.userAuth.authState.error);
 
   useEffect(() => {
     if (isAuth) {
       router.push("/");
     }
   }, [isAuth, router]);
+
   const onClickRegister = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(register({ name, profilePicture, statusMessage }));
@@ -69,7 +70,7 @@ const Register = () => {
                     name="profilePicture"
                     type="url"
                     autoComplete="profilePicture"
-                    placeholder="  Just do it , you are gorgeous 💗 "
+                    placeholder="  Just do it, you are gorgeous 💗"
                     onChange={(e) => setProfilePicture(e.target.value)}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -85,14 +86,14 @@ const Register = () => {
                     name="statusMessage"
                     type="text"
                     autoComplete="statusMessage"
-                    placeholder="  We Know it is empty , please try ...🤯 "
+                    placeholder="  We know it is empty, please try ...🤯"
                     onChange={(e) => setStatusMessage(e.target.value)}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
               <p className="mt-10 text-center text-sm text-gray-500">
-                No Name in Mind ?&nbsp;
+                No Name in Mind?&nbsp;
                 <a
                   href="https://namegenerator.com/people/full"
                   target="_blank"
