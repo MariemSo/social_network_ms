@@ -14,5 +14,9 @@ export default function Home() {
     }
   }, [isAuth]);
 
-  return <main></main>;
+  return (
+    <main>
+      <h1>Welcome </h1>
+    </main>
+  );
 }
