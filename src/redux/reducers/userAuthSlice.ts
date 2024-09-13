@@ -1,5 +1,26 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { initialState as originalInitialState } from "../initialState";
+
+// Define async action to fetch users from the backend
+export const fetchUsersFromBackend = createAsyncThunk(
+  "userAuth/fetchUsers",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await fetch("http://localhost:3001/api/users");
+      if (!response.ok) {
+        throw new Error("Failed to fetch users");
+      }
+      const users = await response.json();
+      return users;
+    } catch (error) {
+      if (error instanceof Error) {
+        return rejectWithValue(error.message); // Return the error message
+      } else {
+        return rejectWithValue("An unknown error occurred");
+      }
+    }
+  }
+);
 
 type registerUser = {
   name: string;
@@ -25,7 +46,8 @@ const userAuthSlice = createSlice({
       if (userRegistered) {
         state.authState.error = "You might consider a new Name 😉";
       } else {
-        const newId = state.userState.users.length + 1;
+        const newId =
+          Math.max(...state.userState.users.map((user) => user.id)) + 1;
         const newUser = {
           id: newId,
           name: action.payload.name,
@@ -67,9 +89,13 @@ const userAuthSlice = createSlice({
       const friend = state.userState.users.find(
         (user) => user.id === action.payload.friendId
       );
-      if (user && friend && !user.friends.includes(friend.id)) {
-        user.friends.push(friend.id);
-        friend.friends.push(user.id);
+      if (user && friend) {
+        if (!user.friends.includes(friend.id)) {
+          user.friends = [...user.friends, friend.id];
+        }
+        if (!friend.friends.includes(user.id)) {
+          friend.friends = [...friend.friends, user.id];
+        }
       }
     },
     deleteFriend: (
@@ -109,6 +135,15 @@ const userAuthSlice = createSlice({
         user.profilePicture = action.payload.profilePicture;
       }
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUsersFromBackend.fulfilled, (state, action) => {
+        state.userState.users = action.payload;
+      })
+      .addCase(fetchUsersFromBackend.rejected, (state, action) => {
+        state.authState.error = action.payload as string;
+      });
   },
 });
 

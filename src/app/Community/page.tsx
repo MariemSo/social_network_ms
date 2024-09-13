@@ -4,7 +4,7 @@ import { useAppSelector } from "@/redux/store";
 import { redirect } from "next/navigation";
 import React, { useEffect } from "react";
 
-const Feed = () => {
+const Community = () => {
   const isAuth = useAppSelector(
     (state) => state.userAuth.authState.auth.isLoggedIn
   );
@@ -38,4 +38,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Community;

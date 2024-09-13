@@ -11,7 +11,7 @@ import DropDownNav from "./DropDownNav";
 const navigation = [
   { name: "Dashboard", href: "/" },
   { name: "Profile", href: "/profile" },
-  { name: "Feed", href: "/feed" },
+  { name: "Community", href: "/Community" },
 ];
 
 function classNames(...classes: string[]) {

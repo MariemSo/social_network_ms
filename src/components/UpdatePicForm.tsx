@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
 import { updateProfilePicture } from "@/redux/reducers/userAuthSlice";
+// import StatusForm from "./StatusForm";
 
 const UpdatePicForm = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -28,8 +29,8 @@ const UpdatePicForm = () => {
   };
 
   return (
-    <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96 h-[500px]">
-      <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-96">
+    <div className="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96 mb-6">
+      <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-80">
         <img
           src={currentUser?.profilePicture || "https://via.placeholder.com/300"}
           alt="Profile"
@@ -53,6 +54,7 @@ const UpdatePicForm = () => {
         >
           Update Picture
         </button>
+        <br />
       </div>
     </div>
   );
