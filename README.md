@@ -31,6 +31,6 @@ A social networking platform allowing users to connect, post updates, and intera
 
 The project is live and accessible via the following link:
 
-[Social Network App Deployment
+[Social Network App Deployment](https://social-network-ms.vercel.app)
 
-![1727986550837](image/README/1727986550837.png)](https://social-network-ms.vercel.app)
+![1727986550837](https://file+.vscode-resource.vscode-cdn.net/c%3A/Users/souay/OneDrive/Bureau/AxelSpringer/StartSteps/Projects/social_network_ms/image/README/1727986550837.png)
