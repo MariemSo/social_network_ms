@@ -6,7 +6,7 @@ A social networking platform allowing users to connect, post updates, and intera
 
 ## Features
 
-- **User Authentication** : Secure login/logout system.
+- **User Authentication** : login/logout .
 - **Profile Management** : Users can update their profile and profile pictures.
 - **Social Interactions** : Add friends, create posts, and comment/like others' posts.
 - **State Management** : Managed via Redux.
