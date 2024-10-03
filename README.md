@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Social Network Web Application
 
-## Getting Started
+## Description
 
-First, run the development server:
+A social networking platform allowing users to connect, post updates, and interact. Features include user authentication, profile customization, friend management, and posting status updates. Built with TypeScript, NextJs, Redux, and Tailwind CSS, and deployed on Vercel.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **User Authentication** : Secure login/logout system.
+- **Profile Management** : Users can update their profile and profile pictures.
+- **Social Interactions** : Add friends, create posts, and comment/like others' posts.
+- **State Management** : Managed via Redux.
+- **Responsive Design** : Built with Tailwind CSS.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Public** : Contains static assets such as images (e.g., `meeting.png`, `profile.png`).
+- **Src** :
+- **app/components** : Contains UI components (`Dashboard.tsx`, `StatusForm.tsx`, etc.).
+- **redux** : Redux store and reducers for state management.
+- **interfaces** : TypeScript interfaces.
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend** : React, TypeScript
+- **State Management** : Redux
+- **Styling** : Tailwind CSS
+- **Build & Deployment** : Next.js, Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The project is live and accessible via the following link:
 
-## Deploy on Vercel
+[Social Network App Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![1727986550837](image/README/1727986550837.png)](https://social-network-ms.vercel.app)
