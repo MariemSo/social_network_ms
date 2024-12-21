@@ -31,6 +31,6 @@ A social networking platform allowing users to connect, post updates, and intera
 
 The project is live and accessible via the following link:
 
-[Social Network App Deployment]([https://social-network-ms.vercel.app](https://social-network-ms-mariemso-mariemsos-projects.vercel.app/))
+[Social Network App Deployment]([https://social-network-ms-mariemso-mariemsos-projects.vercel.app/])
 
 ![1727986913581](image/README/1727986913581.png)
