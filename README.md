@@ -25,7 +25,7 @@ A social networking platform allowing users to connect, post updates, and intera
 - **Frontend** : React, TypeScript
 - **State Management** : Redux
 - **Styling** : Tailwind CSS
-- **Build & Deployment** : Next.js, Vercel
+- **Build & Deployment** : Vercel
 
 ## Deployment
 
